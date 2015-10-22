@@ -85,6 +85,9 @@ namespace LightBuzz.Vitruvius
 
             // DEVELOPERS: If you add a new predefined gesture with a new GestureType,
             // simply add the proper segments to the switch statement here.
+<<<<<<< HEAD
+
+=======
             switch (type)
             {
                 case GestureType.JoinedHands:
@@ -178,6 +181,7 @@ namespace LightBuzz.Vitruvius
                 default:
                     break;
             }
+>>>>>>> 564d3f538c6d2611c7fa25a7ae0b7860f6349031
 
             if (type != GestureType.None)
             {
