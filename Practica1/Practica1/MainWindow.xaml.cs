@@ -30,10 +30,12 @@ namespace VitruviusTest
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
             KinectSensor sensor = SensorExtensions.Default();
 
             if (sensor != null)
@@ -64,6 +66,7 @@ namespace VitruviusTest
         }
 
 
+
         void Sensor_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
             using (var frame = e.OpenSkeletonFrame())
@@ -83,6 +86,7 @@ namespace VitruviusTest
 
                             // Draw skeleton.
                             canvas.DrawSkeleton(skeleton);
+
                         }
                     }
                 }
@@ -99,10 +103,12 @@ namespace VitruviusTest
         {
             _mode = Mode.Color;
         }
-    }
-    
-    public enum Mode
-    {
-        Color
+
+
+
+        public enum Mode
+        {
+            Color
+        }
     }
 }

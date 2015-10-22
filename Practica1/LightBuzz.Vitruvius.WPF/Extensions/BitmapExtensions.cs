@@ -69,6 +69,8 @@ namespace LightBuzz.Vitruvius.WPF
         public static bool Capture(this ImageFrame frame, string path)
         {
             if (frame == null) return false;
+
+
             return Capture((frame as ColorImageFrame).ToBitmap(), path);
 
         }

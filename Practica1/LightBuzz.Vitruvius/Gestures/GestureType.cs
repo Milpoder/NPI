@@ -17,13 +17,12 @@ namespace LightBuzz.Vitruvius
         /// </summary>
         All,
 
-       
-
+        
         /// <summary>
         /// Hand moved horizontally from left to right.
         /// </summary>
         SwipeRight,
 
- 
+       
     }
 }

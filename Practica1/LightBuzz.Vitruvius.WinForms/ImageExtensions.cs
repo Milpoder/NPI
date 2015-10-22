@@ -109,16 +109,7 @@ namespace LightBuzz.Vitruvius.WinForms
         {
             if (frame == null) return false;
 
-            if (frame is ColorImageFrame)
-            {
-                return Capture((frame as ColorImageFrame).ToBitmap(), path);
-            }
-            else if (frame is DepthImageFrame)
-            {
-                return Capture((frame as DepthImageFrame).ToBitmap(), path);
-            }
-
-            return false;
+            return Capture((frame as ColorImageFrame).ToBitmap(), path);
         }
 
         #endregion

@@ -85,15 +85,21 @@ namespace LightBuzz.Vitruvius
 
             // DEVELOPERS: If you add a new predefined gesture with a new GestureType,
             // simply add the proper segments to the switch statement here.
-            if (type == GestureType.SwipeRight) {
-                segments = new IGestureSegment[3];
+            switch (type)
+            {
+                case GestureType.SwipeRight:
+                    segments = new IGestureSegment[3];
 
-                segments[0] = new SwipeRightSegment1();
-                segments[1] = new SwipeRightSegment2();
-                segments[2] = new SwipeRightSegment3();
-            }
-
+                    segments[0] = new SwipeRightSegment1();
+                    segments[1] = new SwipeRightSegment2();
+                    segments[2] = new SwipeRightSegment3();
+                    break;
                 
+                case GestureType.All:
+                case GestureType.None:
+                default:
+                    break;
+            }
 
             if (type != GestureType.None)
             {

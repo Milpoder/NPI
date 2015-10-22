@@ -128,9 +128,27 @@ namespace LightBuzz.Vitruvius.Controls
             if (joint.TrackingState == JointTrackingState.NotTracked) return;
 
             Point point = new Point(_ratioX, _ratioY);
-            ColorImagePoint colorPoint = CoordinateMapper.MapSkeletonPointToColorPoint(joint.Position, ColorImageFormat.RgbResolution640x480Fps30);
-            point.X *= float.IsInfinity(colorPoint.X) ? 0.0 : colorPoint.X;
-            point.Y *= float.IsInfinity(colorPoint.Y) ? 0.0 : colorPoint.Y;
+
+            switch (FrameType)
+            {
+                case VisualizationMode.Color:
+                    {
+                        ColorImagePoint colorPoint = CoordinateMapper.MapSkeletonPointToColorPoint(joint.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                        point.X *= float.IsInfinity(colorPoint.X) ? 0.0 : colorPoint.X;
+                        point.Y *= float.IsInfinity(colorPoint.Y) ? 0.0 : colorPoint.Y;
+                    }
+                    break;
+                case VisualizationMode.Depth:
+                case VisualizationMode.Infrared:
+                    {
+                        DepthImagePoint depthPoint = CoordinateMapper.MapSkeletonPointToDepthPoint(joint.Position, DepthImageFormat.Resolution320x240Fps30);
+                        point.X *= float.IsInfinity(depthPoint.X) ? 0.0 : depthPoint.X;
+                        point.Y *= float.IsInfinity(depthPoint.Y) ? 0.0 : depthPoint.Y;
+                    }
+                    break;
+                default:
+                    break;
+            }
 
             Ellipse ellipse = new Ellipse
             {
@@ -158,13 +176,34 @@ namespace LightBuzz.Vitruvius.Controls
             Point firstPoint = new Point(_ratioX, _ratioY);
             Point secondPoint = new Point(_ratioX, _ratioY);
 
-            ColorImagePoint colorFirstPoint = CoordinateMapper.MapSkeletonPointToColorPoint(first.Position, ColorImageFormat.RgbResolution640x480Fps30);
-            firstPoint.X *= float.IsInfinity(colorFirstPoint.X) ? 0.0 : colorFirstPoint.X;
-            firstPoint.Y *= float.IsInfinity(colorFirstPoint.Y) ? 0.0 : colorFirstPoint.Y;
+            switch (FrameType)
+            {
+                case VisualizationMode.Color:
+                    {
+                        ColorImagePoint colorFirstPoint = CoordinateMapper.MapSkeletonPointToColorPoint(first.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                        firstPoint.X *= float.IsInfinity(colorFirstPoint.X) ? 0.0 : colorFirstPoint.X;
+                        firstPoint.Y *= float.IsInfinity(colorFirstPoint.Y) ? 0.0 : colorFirstPoint.Y;
 
-            ColorImagePoint colorSecondPoint = CoordinateMapper.MapSkeletonPointToColorPoint(second.Position, ColorImageFormat.RgbResolution640x480Fps30);
-            secondPoint.X *= float.IsInfinity(colorSecondPoint.X) ? 0.0 : colorSecondPoint.X;
-            secondPoint.Y *= float.IsInfinity(colorSecondPoint.Y) ? 0.0 : colorSecondPoint.Y;
+                        ColorImagePoint colorSecondPoint = CoordinateMapper.MapSkeletonPointToColorPoint(second.Position, ColorImageFormat.RgbResolution640x480Fps30);
+                        secondPoint.X *= float.IsInfinity(colorSecondPoint.X) ? 0.0 : colorSecondPoint.X;
+                        secondPoint.Y *= float.IsInfinity(colorSecondPoint.Y) ? 0.0 : colorSecondPoint.Y;
+                    }
+                    break;
+                case VisualizationMode.Depth:
+                case VisualizationMode.Infrared:
+                    {
+                        DepthImagePoint depthFirstPoint = CoordinateMapper.MapSkeletonPointToDepthPoint(first.Position, DepthImageFormat.Resolution320x240Fps30);
+                        firstPoint.X *= float.IsInfinity(depthFirstPoint.X) ? 0.0 : depthFirstPoint.X;
+                        firstPoint.Y *= float.IsInfinity(depthFirstPoint.Y) ? 0.0 : depthFirstPoint.Y;
+
+                        DepthImagePoint depthSecondPoint = CoordinateMapper.MapSkeletonPointToDepthPoint(second.Position, DepthImageFormat.Resolution320x240Fps30);
+                        secondPoint.X *= float.IsInfinity(depthSecondPoint.X) ? 0.0 : depthSecondPoint.X;
+                        secondPoint.Y *= float.IsInfinity(depthSecondPoint.Y) ? 0.0 : depthSecondPoint.Y;
+                    }
+                    break;
+                default:
+                    break;
+            }
 
             Line line = new Line
             {
