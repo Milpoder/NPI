@@ -8,14 +8,14 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Style="{StaticResource GridStyle}">
-            <Image Name="camera" Margin="0,0,0,-39" />
-            <Canvas Name="canvas" />
+            <Image Name="camera" Margin="0,0,0,-43" />
+            <Canvas Name="canvas" Margin="0,0,0,-43" />
         </Grid>
         <StackPanel Grid.Column="0" Style="{StaticResource StackPanelButtonsStyle}"/>
         <Grid Grid.Column="1">
             <StackPanel Margin="0,-1,0,1">
                 <StackPanel Style="{StaticResource StackPanelTextBlocksStyle}">
-                    <TextBlock Style="{StaticResource TextBlockStyle}" ><Run Text="Gest"/><Run Text="o reconocido"/><Run Text=":"/></TextBlock>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="Gesto reconocido:" />
                     <TextBlock Name="tblGestures" Style="{StaticResource TextBlockStyle}" Text="-" />
                 </StackPanel>
                 <StackPanel Style="{StaticResource StackPanelTextBlocksStyle}"/>

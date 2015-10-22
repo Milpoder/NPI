@@ -85,103 +85,15 @@ namespace LightBuzz.Vitruvius
 
             // DEVELOPERS: If you add a new predefined gesture with a new GestureType,
             // simply add the proper segments to the switch statement here.
-<<<<<<< HEAD
+            if (type == GestureType.SwipeRight) {
+                segments = new IGestureSegment[3];
 
-=======
-            switch (type)
-            {
-                case GestureType.JoinedHands:
-                    segments = new IGestureSegment[20];
-
-                    JoinedHandsSegment1 joinedhandsSegment = new JoinedHandsSegment1();
-                    for (int i = 0; i < 20; i++)
-                    {
-                        segments[i] = joinedhandsSegment;
-                    }
-                    break;
-                case GestureType.Menu:
-                    segments = new IGestureSegment[20];
-
-                    MenuSegment1 menuSegment = new MenuSegment1();
-                    for (int i = 0; i < 20; i++)
-                    {
-                        segments[i] = menuSegment;
-                    }
-                    break;
-                case GestureType.SwipeDown:
-                    segments = new IGestureSegment[3];
-
-                    segments[0] = new SwipeDownSegment1();
-                    segments[1] = new SwipeDownSegment2();
-                    segments[2] = new SwipeDownSegment3();
-                    break;
-                case GestureType.SwipeLeft:
-                    segments = new IGestureSegment[3];
-
-                    segments[0] = new SwipeLeftSegment1();
-                    segments[1] = new SwipeLeftSegment2();
-                    segments[2] = new SwipeLeftSegment3();
-                    break;
-                case GestureType.SwipeRight:
-                    segments = new IGestureSegment[3];
-
-                    segments[0] = new SwipeRightSegment1();
-                    segments[1] = new SwipeRightSegment2();
-                    segments[2] = new SwipeRightSegment3();
-                    break;
-                case GestureType.SwipeUp:
-                    segments = new IGestureSegment[3];
-
-                    segments[0] = new SwipeUpSegment1();
-                    segments[1] = new SwipeUpSegment2();
-                    segments[2] = new SwipeUpSegment3();
-                    break;
-                case GestureType.WaveLeft:
-                    segments = new IGestureSegment[6];
-
-                    WaveLeftSegment1 waveLeftSegment1 = new WaveLeftSegment1();
-                    WaveLeftSegment2 waveLeftSegment2 = new WaveLeftSegment2();
-
-                    segments[0] = waveLeftSegment1;
-                    segments[1] = waveLeftSegment2;
-                    segments[2] = waveLeftSegment1;
-                    segments[3] = waveLeftSegment2;
-                    segments[4] = waveLeftSegment1;
-                    segments[5] = waveLeftSegment2;
-                    break;
-                case GestureType.WaveRight:
-                    segments = new IGestureSegment[6];
-
-                    WaveRightSegment1 waveRightSegment1 = new WaveRightSegment1();
-                    WaveRightSegment2 waveRightSegment2 = new WaveRightSegment2();
-
-                    segments[0] = waveRightSegment1;
-                    segments[1] = waveRightSegment2;
-                    segments[2] = waveRightSegment1;
-                    segments[3] = waveRightSegment2;
-                    segments[4] = waveRightSegment1;
-                    segments[5] = waveRightSegment2;
-                    break;
-                case GestureType.ZoomIn:
-                    segments = new IGestureSegment[3];
-
-                    segments[0] = new ZoomSegment1();
-                    segments[1] = new ZoomSegment2();
-                    segments[2] = new ZoomSegment3();
-                    break;
-                case GestureType.ZoomOut:
-                    segments = new IGestureSegment[3];
-
-                    segments[0] = new ZoomSegment3();
-                    segments[1] = new ZoomSegment2();
-                    segments[2] = new ZoomSegment1();
-                    break;
-                case GestureType.All:
-                case GestureType.None:
-                default:
-                    break;
+                segments[0] = new SwipeRightSegment1();
+                segments[1] = new SwipeRightSegment2();
+                segments[2] = new SwipeRightSegment3();
             }
->>>>>>> 564d3f538c6d2611c7fa25a7ae0b7860f6349031
+
+                
 
             if (type != GestureType.None)
             {

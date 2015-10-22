@@ -55,7 +55,10 @@ namespace VitruviusTest
             {
                 if (frame != null)
                 {
+                    if (_mode == Mode.Color)
+                    {
                         camera.Source = frame.ToBitmap();
+                    }
                 }
             }
         }
@@ -80,7 +83,6 @@ namespace VitruviusTest
 
                             // Draw skeleton.
                             canvas.DrawSkeleton(skeleton);
-
                         }
                     }
                 }
@@ -90,34 +92,7 @@ namespace VitruviusTest
         void GestureController_GestureRecognized(object sender, GestureEventArgs e)
         {
             // Display the gesture type.
-            tblGestures.Text = e.Name;
-
-            // Do something according to the type of the gesture.
-            switch (e.Type)
-            {
-                case GestureType.JoinedHands:
-                    break;
-                case GestureType.Menu:
-                    break;
-                case GestureType.SwipeDown:
-                    break;
-                case GestureType.SwipeLeft:
-                    break;
-                case GestureType.SwipeRight:
-                    break;
-                case GestureType.SwipeUp:
-                    break;
-                case GestureType.WaveLeft:
-                    break;
-                case GestureType.WaveRight:
-                    break;
-                case GestureType.ZoomIn:
-                    break;
-                case GestureType.ZoomOut:
-                    break;
-                default:
-                    break;
-            }
+            tblGestures.Text = "Ok";
         }
 
         private void Color_Click(object sender, RoutedEventArgs e)
