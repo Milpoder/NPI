@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/leapstrap.css" rel="stylesheet" media="screen">
+    <link href="css/main.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <script src="js/jquery.js"></script>
+    <script src="js/leap.js"></script>
+    <script src="js/leapstrap.js"></script>
+  </head>
+  <body class="background leap-interactive">
+    <div class="center">
+      <span>Leap Motion utiliza una librería en Javascript llamada leapstrap, a través de ella podemos aceder a Leap Motion y realizar cualquier tarea, para ello, utilizamos en este caso un cursor, el cual se muestra en la imagen:</span><br>
+      <img src="img/cursor.png"><br>
+      </span>Como se ha visto en el menú principal, esta página tiene un ejemplo en el que podrás jugar a un cubo de rubik y poder interactuar con él, además de poder interactuar con todos los elementos de la pantalla. </span>
+      <br><br>
+      <span>
+        Realizando el siguiente movimiento, se puede hacer "scroll" con el dedo, en las páginas habilidatas para ello:
+      </span><br><br>
+      <img src="img/giro.png" height="300" width="300"><br><br>
+      <span> A continuación ponemos un vídeo de ejemplo:</span><br>
+      <video width="400" id="Video1">
+    		<source src="img/ejemplo.mp4" type="video/mp4"> 
+      </video><br>
+      <div class="btn-group botones">
+        <a id="restart" type="button" class="leap-interactive btn btn-default" onclick="restart();">[]</a>
+        <a id="rew" type="button" class="leap-interactive btn btn-default" onclick="skip(-10);">&lt;&lt;</a>
+        <a id="play"type="button" class="leap-interactive btn btn-default" onclick="vidplay();">></a>
+        <a id="fastFwd" type="button" class="leap-interactive btn btn-default" onclick="skip(10);">&gt;&gt;</a>
+      </div>
+    </div>
+    <a type="button" class="leap-interactive btn btn-default btnback" href="index.html">Atrás</a>
+    <script>
+      LeapManager.init({
+        interactiveSelector: "a",
+        maxCursors:1,
+        enableMetaGestures: true,
+        enableDefaultMetaGestureActions: true
+      });
+    </script><!--Máximo de cursores-->
+    <script type="text/javascript">
+
+    function vidplay() {
+       var video = document.getElementById("Video1");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "||";
+       } else {
+          video.pause();
+          button.textContent = ">";
+       }
+    }
+
+    function restart() {
+        var video = document.getElementById("Video1");
+        video.currentTime = 0;
+    }
+
+    function skip(value) {
+        var video = document.getElementById("Video1");
+        video.currentTime += value;
+    }      
+</script>
+  </body>
+</html>

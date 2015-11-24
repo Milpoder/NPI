@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/leapstrap.css" rel="stylesheet" media="screen">
+    <link href="css/main.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <script src="js/jquery.js"></script>
+    <script src="js/leap.js"></script>
+    <script src="js/leapstrap.js"></script>
+  </head>
+  <body class="background">
+    <div class="center">
+      <img src="img/leap.png" class="imgcenter">
+      <a type="button" class="leap-interactive btn btn-default btn-lg btn-block" href="ejemplo.html">Ejemplo</a><br>
+      <a type="button" class="leap-interactive btn btn-default btn-lg btn-block" href="instrucciones.html">Instrucciones</a><br>
+      <a type="button" class="leap-interactive btn btn-default btn-lg btn-block" href="aboutleap.html">Sobre Leap Motion</a><br>
+    </div>
+    <script>LeapManager.init({interactiveSelector:"a",maxCursors:1});</script><!--Máximo de cursores-->
+  </body>
+</html>

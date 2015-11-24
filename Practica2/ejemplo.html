@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css"></link>  
+    <link rel="stylesheet" href="css/rubik.css"></link>  
+    <link href="css/leapstrap.css" rel="stylesheet" media="screen">
+    <link href="css/main.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <script src="js/jquery.js"></script>
+    <script src="js/leap.js"></script>
+    <script src="js/leapstrap.js"></script>
+    <script src="js/yui-min.js"></script>
+    <script src="js/rubik.js"></script>
+    <script src="js/message-scroll.js"></script>
+</head>
+<body class="background center">
+    <section id="rubik">
+        <div id="cube-container">
+            <div id="cube-viewport">
+                <div id="cube">
+                <!-- Cara de arriba -->            
+                    <!-- columna izquierda  -->                
+                    <div class="utl cubie up LM UE BS leap-interactive"><div><span>U1</span></div></div> 
+                    <div class="ucl cubie up LM UE CS leap-interactive"><div><span>U2</span></div></div>
+                    <div class="ubl cubie up LM UE FS leap-interactive"><div><span>U3</span></div></div>
+                    <!-- columna central  -->            
+                    <div class="utc cubie up CM UE BS leap-interactive"><div><span>U4</span></div></div>
+                    <div class="ucc cubie up CM UE CS leap-interactive"><div><span>U5</span></div></div>
+                    <div class="ubc cubie up CM UE FS leap-interactive"><div><span>U6</span></div></div>
+                    <!-- columna derecha  -->
+                    <div class="utr cubie up RM UE BS leap-interactive"><div><span>U7</span></div></div>
+                    <div class="ucr cubie up RM UE CS leap-interactive"><div><span>U8</span></div></div>
+                    <div class="ubr cubie up RM UE FS leap-interactive"><div><span>U9</span></div></div>
+                <!-- Cara frontal -->
+                    <!-- columna izquierda  -->                
+                    <div class="ftl cubie front LM UE FS leap-interactive"><div><span>F1</span></div></div>
+                    <div class="fcl cubie front LM CE FS leap-interactive"><div><span>F2</span></div></div>
+                    <div class="fbl cubie front LM DE FS leap-interactive"><div><span>F3</span></div></div>
+                    <!-- columna central  -->            
+                    <div class="ftc cubie front CM UE FS leap-interactive"><div><span>F4</span></div></div>
+                    <div class="fcc cubie front CM CE FS leap-interactive"><div><span>F5</span></div></div>
+                    <div class="fbc cubie front CM DE FS leap-interactive"><div><span>F6</span></div></div>
+                    <!-- columna derecha  -->
+                    <div class="ftr cubie front RM UE FS leap-interactive"><div><span>F7</span></div></div>
+                    <div class="fcr cubie front RM CE FS leap-interactive"><div><span>F8</span></div></div>
+                    <div class="fbr cubie front RM DE FS leap-interactive"><div><span>F9</span></div></div>
+                <!--Cara de abajo -->
+                    <!-- columna izquierda  -->                
+                    <div class="dtl cubie down LM DE FS leap-interactive"><div><span>D1</span></div></div>
+                    <div class="dcl cubie down LM DE CS leap-interactive"><div><span>D2</span></div></div>
+                    <div class="dbl cubie down LM DE BS leap-interactive"><div><span>D3</span></div></div>
+                    <!-- columna central  -->                
+                    <div class="dtc cubie down CM DE FS leap-interactive"><div><span>D4</span></div></div>
+                    <div class="dcc cubie down CM DE CS leap-interactive"><div><span>D5</span></div></div>
+                    <div class="dbc cubie down CM DE BS leap-interactive"><div><span>D6</span></div></div>
+                    <!-- columna derecha  -->        
+                    <div class="dtr cubie down RM DE FS leap-interactive"><div><span>D7</span></div></div>
+                    <div class="dcr cubie down RM DE CS leap-interactive"><div><span>D8</span></div></div>
+                    <div class="dbr cubie down RM DE BS leap-interactive"><div><span>D9</span></div></div>
+                <!--Cara trasera -->    
+                    <!-- columna izquierda  -->           
+                    <div class="btl cubie back LM DE BS leap-interactive"><div><span>B1</span></div></div>
+                    <div class="bcl cubie back LM CE BS leap-interactive"><div><span>B2</span></div></div>
+                    <div class="bbl cubie back LM UE BS leap-interactive"><div><span>B3</span></div></div>
+                    <!-- columna central  -->           
+                    <div class="btc cubie back CM DE BS leap-interactive"><div><span>B4</span></div></div>
+                    <div class="bcc cubie back CM CE BS leap-interactive"><div><span>B5</span></div></div>
+                    <div class="bbc cubie back CM UE BS leap-interactive"><div><span>B6</span></div></div> 
+                    <!-- Columna derecha  -->    
+                    <div class="btr cubie back RM DE BS leap-interactive"><div><span>B7</span></div></div>
+                    <div class="bcr cubie back RM CE BS leap-interactive"><div><span>B8</span></div></div>
+                    <div class="bbr cubie back RM UE BS leap-interactive"><div><span>B9</span></div></div>         
+                <!--Cara izquierda -->
+                    <!-- columna izquierda  -->           
+                    <div class="ltl cubie left LM UE BS leap-interactive"><div><span>L1</span></div></div>
+                    <div class="lcl cubie left LM CE BS leap-interactive"><div><span>L2</span></div></div>
+                    <div class="lbl cubie left LM DE BS leap-interactive"><div><span>L3</span></div></div>
+                    <!-- columna dentral -->  
+                    <div class="ltc cubie left LM UE CS leap-interactive"><div><span>L4</span></div></div>
+                    <div class="lcc cubie left LM CE CS leap-interactive"><div><span>L5</span></div></div>
+                    <div class="lbc cubie left LM DE CS leap-interactive"><div><span>L6</span></div></div>
+                    <!-- columna derecha -->     
+                    <div class="ltr cubie left LM UE FS leap-interactive"><div><span>L7</span></div></div>
+                    <div class="lcr cubie left LM CE FS leap-interactive"><div><span>L8</span></div></div>
+                    <div class="lbr cubie left LM DE FS leap-interactive"><div><span>L9</span></div></div>
+                <!--Cara derecha -->
+                    <!-- columna izquierda  -->           
+                    <div class="rtl cubie right RM UE FS leap-interactive"><div><span>R1</span></div></div>
+                    <div class="rcl cubie right RM CE FS leap-interactive"><div><span>R2</span></div></div>
+                    <div class="rbl cubie right RM DE FS leap-interactive"><div><span>R3</span></div></div>
+                    <!-- columna central  -->  
+                    <div class="rtc cubie right RM UE CS leap-interactive"><div><span>R4</span></div></div>
+                    <div class="rcc cubie right RM CE CS leap-interactive"><div><span>R5</span></div></div>
+                    <div class="rbc cubie right RM DE CS leap-interactive"><div><span>R6</span></div></div>
+                    <!-- Columna derecha  -->    
+                    <div class="rtr cubie right RM UE BS leap-interactive"><div><span>R7</span></div></div>
+                    <div class="rcr cubie right RM CE BS leap-interactive"><div><span>R8</span></div></div>
+                    <div class="rbr cubie right RM DE BS leap-interactive"><div><span>R9</span></div></div>  
+                 </div>
+            </div>
+        </div>  
+        <section id="messages">
+            <section id="main">
+                <div id="cube-controls">
+                    <ul>
+                        <li>
+                            <div class="undo leap-interactive"></div>
+                        </li>
+                        <li>
+                            <div class="redo leap-interactive"></div>
+                        </li>
+                        <li>
+                            <div  class="solve leap-interactive"></div>
+                        </li>
+                        <li id="rotation">
+                            <div class="rotate leap-interactive"></div>
+                        </li>
+                    </ul>
+                </div> 
+            </section>  
+        </section>
+    </section>
+    <div>
+      <a type="button" class="leap-interactive btn btn-default btnback2" href="index.html">Atrás</a>
+    </div>
+    <script>
+        YUI().use('node','rubik','message-scroll',function(Y){
+            var cube = window.cube = new Y.Rubik();
+            cube.run();    
+        });
+    </script>
+    <script>LeapManager.init({
+    interactiveSelector: "a, #cube div,#cube-controls div",
+    enableMetaGestures: true,
+    enableDefaultMetaGestureActions: false,
+    maxCursors:2,
+    enableHoverTap: true,
+    enablePressDown: true,
+    enableTouchScrolling: false,
+    enableScrollbarScrolling: true,
+    simulateWithMouse:false,
+    mouseCursorConfig: {
+    easing:.2
+    },
+    greedySelector: "body"
+});</script><!--Máximo de cursores-->
+</body>
+
+</html>
